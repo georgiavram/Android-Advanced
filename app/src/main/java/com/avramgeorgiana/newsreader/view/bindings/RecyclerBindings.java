@@ -17,11 +17,21 @@ public class RecyclerBindings {
         NewsAdapter newsAdapter = (NewsAdapter) recyclerView.getAdapter();
 
         if (newsAdapter == null) {
-            newsAdapter = new NewsAdapter();
+            newsAdapter = new NewsAdapter(recyclerView.getContext());
             recyclerView.setLayoutManager((new LinearLayoutManager(recyclerView.getContext())));
             recyclerView.setAdapter(newsAdapter);
         }
         //???
         newsAdapter.setItems(news, handler);
     }
+//    @BindingAdapter({"imgUrl", "placeholder"})
+//    public static void setImageUrl(ImageView imageView, @Nullable String url, @DrawableRes int placeHolder) {
+//        Glide
+//                .with(imageView.getContext())
+//                .load(url)
+//                .fallback(placeHolder)
+//                .into(imageView);
+//    }
+
+
 }
