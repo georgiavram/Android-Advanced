@@ -31,7 +31,6 @@ public class ImageBinding {
 
     @BindingAdapter("imgUrl")
     public static void setImageUrl(ImageView imageView, @Nullable String url) {
-        System.out.println("***************************IMG:" + url);
         Glide
                 .with(imageView.getContext())
                 .load(url)

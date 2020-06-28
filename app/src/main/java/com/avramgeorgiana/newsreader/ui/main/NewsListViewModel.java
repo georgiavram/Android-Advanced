@@ -28,6 +28,7 @@ public class NewsListViewModel extends AndroidViewModel implements LifecycleObse
     private final static String LINK = "https://newsapi.org/";
     public final ObservableBoolean isLoading;
     public final SingleLiveEvent<String> openLink;
+    public SingleLiveEvent<ArticleItemViewModel> article;
     private final NewsRepository repo;
     @NonNull
     public ObservableList<ArticleItemViewModel> newsList;
@@ -36,6 +37,7 @@ public class NewsListViewModel extends AndroidViewModel implements LifecycleObse
         super(application);
         this.repo = repo;
         this.openLink = new SingleLiveEvent<>();
+        this.article = new SingleLiveEvent<>();
         this.isLoading = new ObservableBoolean();
         this.newsList = new ObservableArrayList<>();
     }
@@ -65,7 +67,7 @@ public class NewsListViewModel extends AndroidViewModel implements LifecycleObse
 
     @Override
     public void onItemSelected(ArticleItemViewModel item) {
-
+        article.setValue(item);
     }
 
     @Override
