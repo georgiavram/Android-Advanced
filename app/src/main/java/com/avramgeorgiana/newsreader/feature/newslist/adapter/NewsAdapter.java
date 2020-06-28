@@ -17,8 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
-
-
     public List<ArticleItemViewModel> articleList;
     private NewsHandler handler;
     private Context context;
@@ -40,13 +38,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.binding.setViewModel(articleList.get(position));
         ArticleItemViewModel item = articleList.get(position);
         holder.bind(item);
-//
-//                Glide
-//                .with(holder.imageView.getContext())
-//                .load(item.getImageUrl())
-//                .fallback(R.drawable.ic_launcher_background)
-//                .into(holder.imageView);
-
     }
 
 
@@ -71,6 +62,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             super(binding.getRoot());
             this.binding = binding;
             this.imageView = binding.imageView;
+            binding.setHandler(handler);
         }
 
         public void bind(ArticleItemViewModel item) {
@@ -79,4 +71,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         }
 
     }
+
+
 }

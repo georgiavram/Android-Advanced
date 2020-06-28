@@ -40,7 +40,7 @@ public class MainFragment extends Fragment {
         super.onCreate(savedInstanceState);
         alertNavigator = new AlertNavigator(getChildFragmentManager(), requireContext());
         mViewModel = new ViewModelProvider(this, new ViewModelFactory(requireActivity().getApplication())).get(NewsListViewModel.class);
-        mViewModel.openLink.observe(this, link -> openLink(link));
+        mViewModel.openLink.observe(this, this::openLink);
         getLifecycle().addObserver(mViewModel);
     }
 

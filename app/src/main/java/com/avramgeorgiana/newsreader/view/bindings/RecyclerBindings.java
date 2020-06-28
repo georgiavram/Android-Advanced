@@ -24,14 +24,6 @@ public class RecyclerBindings {
         //???
         newsAdapter.setItems(news, handler);
     }
-//    @BindingAdapter({"imgUrl", "placeholder"})
-//    public static void setImageUrl(ImageView imageView, @Nullable String url, @DrawableRes int placeHolder) {
-//        Glide
-//                .with(imageView.getContext())
-//                .load(url)
-//                .fallback(placeHolder)
-//                .into(imageView);
-//    }
 
 
 }

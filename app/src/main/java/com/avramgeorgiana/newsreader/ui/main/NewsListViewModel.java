@@ -43,16 +43,6 @@ public class NewsListViewModel extends AndroidViewModel implements LifecycleObse
     @SuppressLint("CheckResult")
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     public void refresh() {
-//        ArticleItemViewModel a1 = new ArticleItemViewModel("Title Mock", "https://androidwave.com/wp-content/uploads/2019/01/profile_pic.jpg", "waaaaaaww");
-//        ArticleItemViewModel a2 = new ArticleItemViewModel("Title Mock2", "https://androidwave.com/wp-content/uploads/2019/01/profile_pic.jpg", "android");
-//        ArticleItemViewModel a3 = new ArticleItemViewModel("Title Mock3", "https://androidwave.com/wp-content/uploads/2019/01/profile_pic.jpg", "awesome");
-//        List<ArticleItemViewModel> l = new ArrayList<>();
-//
-//        l.add(a1);
-//        l.add(a2);
-//        l.add(a3);
-//
-//        newsList.addAll(l);
         isLoading.set(true);
         repo.getNewsArticles()
                 .observeOn(AndroidSchedulers.mainThread())
@@ -70,7 +60,7 @@ public class NewsListViewModel extends AndroidViewModel implements LifecycleObse
 
     private void onNewsArticlesError(Throwable throwable) {
         isLoading.set(false);
-        // error.setValue(throwable);
+//        error.setValue(throwable);
     }
 
     @Override
