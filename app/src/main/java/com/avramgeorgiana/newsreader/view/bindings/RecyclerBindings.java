@@ -21,7 +21,6 @@ public class RecyclerBindings {
             recyclerView.setLayoutManager((new LinearLayoutManager(recyclerView.getContext())));
             recyclerView.setAdapter(newsAdapter);
         }
-        //???
         newsAdapter.setItems(news, handler);
     }
 

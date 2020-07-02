@@ -62,7 +62,6 @@ public class NewsListViewModel extends AndroidViewModel implements LifecycleObse
 
     private void onNewsArticlesError(Throwable throwable) {
         isLoading.set(false);
-//        error.setValue(throwable);
     }
 
     @Override
