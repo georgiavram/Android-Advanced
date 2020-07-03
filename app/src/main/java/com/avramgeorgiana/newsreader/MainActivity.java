@@ -1,10 +1,10 @@
-package com.AvramGeorgiana.newsreader;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.avramgeorgiana.newsreader;
 
 import android.os.Bundle;
 
-import com.AvramGeorgiana.newsreader.ui.main.MainFragment;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.avramgeorgiana.newsreader.ui.main.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,4 +18,5 @@ public class MainActivity extends AppCompatActivity {
                     .commitNow();
         }
     }
+
 }
